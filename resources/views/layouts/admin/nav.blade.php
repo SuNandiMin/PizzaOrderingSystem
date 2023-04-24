@@ -31,6 +31,10 @@
                             <a href="{{ route('user#list') }}">
                                 <i class="fa-solid fa-circle-user"></i>User List</a>
                         </li>
+                        <li>
+                            <a href="{{ route('contact#list') }}">
+                                <i class="fa-solid fa-circle-user"></i>Contacts List</a>
+                        </li>
                     </ul>
                 </nav>
             </div>

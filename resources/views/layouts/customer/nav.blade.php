@@ -86,8 +86,8 @@
             <div class="col-lg-9">
                 <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-1">
                     <a href="" class="text-decoration-none d-block d-lg-none">
-                        <span class="h1 text-uppercase text-dark bg-light px-1">Multi</span>
-                        <span class="h1 text-uppercase text-light bg-primary px-1 ml-n1">Shop</span>
+                        <span class="h1 text-uppercase text-primary bg-dark px-1">PIZZA</span>
+                        <span class="h1 text-uppercase text-dark bg-primary px-1 ml-n1">Shop</span>
                     </a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
@@ -96,6 +96,7 @@
                         <div class="navbar-nav mr-auto py-0">
                             <a href="{{ route('home') }}" class="nav-item nav-link active">Home</a>
                             <a href="{{ route('cart#list') }}" class="nav-item nav-link">My Cart</a>
+                            <a href="{{ route('contact#Page') }}" class="nav-item nav-link ">Contact Us</a>
                             @if (Auth::user()->role == 'admin')
                                 <a href="{{ route('product#list') }}" class="nav-item nav-link">Dashboard</a>
                             @endif

@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 
 use App\Http\Controllers\Dashboard\CategoryController;
+use App\Http\Controllers\Dashboard\ContactController as DashboardContactController;
 use App\Http\Controllers\Dashboard\OrderController as DashboardOrderController;
 use App\Http\Controllers\Dashboard\ProductController;
 use App\Http\Controllers\Dashboard\UserControler;
@@ -61,6 +63,11 @@ Route::group(['middleware' => 'register.login'], function () {
             Route::get('/', [PizzaProductController::class, 'list'])->name('pizza#list');
             Route::get('filter/category/{id}', [PizzaProductController::class, 'categoryFilter'])->name('category#filter');
             Route::get('detail/{id}', [PizzaProductController::class, 'detail'])->name('pizza#detail');
+
+            Route::prefix('contact')->group(function () {
+                Route::get('/',[ContactController::class,'contactPage'])->name('contact#Page');
+                Route::post('sent-message',[ContactController::class,'sentMessage'])->name('sent#message');
+            });
 
             Route::group(['prefix' => 'ajax'], function () {
                 Route::get('sorting', [AjaxController::class, 'sorting']);
@@ -128,6 +135,11 @@ Route::group(['middleware' => 'register.login'], function () {
                 Route::get('item-list{code}', [DashboardOrderController::class, 'itemList'])->name('order#item#list');
                 Route::post('filter-by-status',[DashboardOrderController::class,'filterByStatus'])->name('filter#by#status');
                 Route::get('change-status',[DashboardOrderController::class,'changeStatus'])->name('change#status');
+            });
+
+            //Contact
+            Route::prefix('contact')->group(function () {
+                Route::get('/',[DashboardContactController::class,'contactList'])->name('contact#list');
             });
         });
     });

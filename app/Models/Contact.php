@@ -13,4 +13,7 @@ class Contact extends Model
         'user_id','message',
     ];
 
+    function user(){
+       return $this->belongsTo(User::class);
+    }
 }

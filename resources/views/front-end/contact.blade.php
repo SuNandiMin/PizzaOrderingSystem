@@ -8,29 +8,30 @@
             <div class="col-lg-7 mb-5">
                 <div class="contact-form bg-light p-30">
                     <div id="success"></div>
-                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                        <div class="control-group">
+                    <form action="{{ route('sent#message') }}" method="post" >
+                        @csrf
+                        {{-- <div class="control-group">
                             <input type="text" class="form-control" id="name" placeholder="Your Name"
-                                required="required" data-validation-required-message="Please enter your name" />
+                                required="required" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
                             <input type="email" class="form-control" id="email" placeholder="Your Email"
-                                required="required" data-validation-required-message="Please enter your email" />
+                                required="required"/>
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
                             <input type="text" class="form-control" id="subject" placeholder="Subject"
-                                required="required" data-validation-required-message="Please enter a subject" />
+                                required="required"/>
                             <p class="help-block text-danger"></p>
-                        </div>
+                        </div> --}}
                         <div class="control-group">
-                            <textarea class="form-control" rows="8" id="message" placeholder="Message" required="required"
-                                data-validation-required-message="Please enter your message"></textarea>
+                            <textarea class="form-control" rows="8" name="message" placeholder="Message" required="required"
+                                ></textarea>
                             <p class="help-block text-danger"></p>
                         </div>
                         <div>
-                            <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">Send
+                            <button class="btn btn-primary py-2 px-4" type="submit">Send
                                 Message</button>
                         </div>
                     </form>
