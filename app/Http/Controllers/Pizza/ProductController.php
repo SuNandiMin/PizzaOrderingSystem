@@ -17,7 +17,7 @@ class ProductController extends Controller
             $query->where('name', 'like', '%' . request('search') . '%')
                 ->orWhere('price', '<=', request('search'));
             })
-            ->paginate(6);
+            ->paginate(3);
 
         $products->appends(request()->all());
         return view('front-end.pizza.pizza_list', compact('products', 'categories'));

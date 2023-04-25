@@ -145,3 +145,12 @@ Route::group(['middleware' => 'register.login'], function () {
     });
 });
 Route::view('nav', 'admin.index');
+
+Route::get('route-testing',function(){
+    $data =[
+        'status' => true,
+        'message' => 'This is  route Testing',
+    ];
+
+    return response()->json($data, 200);
+});
