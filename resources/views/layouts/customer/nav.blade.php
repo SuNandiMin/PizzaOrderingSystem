@@ -138,7 +138,7 @@
                                                 src="{{ asset('storage/images/profile_images/default.png') }}"
                                                 alt="John Doe" class="rounded-circle" />
                                         @endif
-                                        <a class="js-acc-btn text-capitalize"
+                                        <a class="js-acc-btn text-capitalize" style="text-decoration: none"
                                             href="#">{{ Auth::user()->name }}</a>
                                     </div>
                                     <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">

@@ -82,7 +82,7 @@
         {{ $orders->links() }}
     </div>
     <!-- END DATA TABLE -->
-    </div>
+
 @endsection
 
 @section('js-script')
